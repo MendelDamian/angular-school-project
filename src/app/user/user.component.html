@@ -1,0 +1,8 @@
+<div class="container pt-5">
+  <input [value]="username" (input)="username = getValue($event)">
+  <button (click)="getUser()" >Szukaj</button>
+
+  <div [hidden]="user.id == 0">
+    <p>dane: {{user.p0}} dla użytkownika: {{username}}</p>
+  </div>
+</div>
