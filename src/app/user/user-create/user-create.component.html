@@ -2,3 +2,7 @@
   <input [(ngModel)]="userCreate.name" type="text">
   <button (click)="createUser()" >Utwórz uzytkownika</button>
 </div>
+
+<div [hidden]="exists === true">
+  Uzytkownik już istnieje.
+</div>

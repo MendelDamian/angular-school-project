@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DatabaseService} from '../../database.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-create',
@@ -7,6 +8,7 @@ import {DatabaseService} from '../../database.service';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
+  exists: boolean = true
   userCreate: UserCreate = {
     name: ''
   }
@@ -15,7 +17,11 @@ export class UserCreateComponent implements OnInit {
     id: 0
   }
 
-  constructor(private database: DatabaseService) { }
+  constructor(
+    private database: DatabaseService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -25,10 +31,20 @@ export class UserCreateComponent implements OnInit {
   }
 
   createUser(): void {
-    this.database.createUser(this.userCreate).subscribe(response => {
-      this.userCreateResponse = response[0];
-      console.log(this.userCreateResponse);
-    })
+    this.database.createUser(this.userCreate).subscribe(result => {
+      this.exists = false;
+      if (result.length > 0)
+      {
+        this.userCreateResponse = result[0];
+        if (this.userCreateResponse.id != 0)
+        {
+          this.router.navigate(['/user/' + this.userCreate.name ]);
+        } else {
+          this.exists = true;
+        }
+      }
+    });
+
   }
 
 }
