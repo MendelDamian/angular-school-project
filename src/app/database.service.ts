@@ -21,9 +21,6 @@ export class DatabaseService {
   }
 
   createUser(userCreate_t: UserCreate): Observable<UserCreateResponse[]> {
-    let result = this.http.put<UserCreateResponse[]>(this.host + "players", userCreate_t);
-    console.log(userCreate_t);
-    console.log(result);
-    return result;
+    return this.http.put<UserCreateResponse[]>(this.host + "players", userCreate_t);
   }
 }

@@ -27,8 +27,6 @@ export class UserCreateComponent implements OnInit {
   createUser(): void {
     console.log(this.userCreate);
     this.database.createUser(this.userCreate).subscribe(response => {
-      console.log("Wynik")
-      console.log(response);
       this.userCreateResponse = response[0];
     })
 
