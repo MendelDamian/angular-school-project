@@ -25,11 +25,10 @@ export class UserCreateComponent implements OnInit {
   }
 
   createUser(): void {
-    console.log(this.userCreate);
     this.database.createUser(this.userCreate).subscribe(response => {
       this.userCreateResponse = response[0];
+      console.log(this.userCreateResponse);
     })
-
   }
 
 }

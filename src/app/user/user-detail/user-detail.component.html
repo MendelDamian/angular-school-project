@@ -1,0 +1,21 @@
+<div [hidden]="loading === false" >
+  LOADING...
+</div>
+<div [hidden]="loading === true || error === true">
+  <h1>Username: {{ username }}</h1>
+  <h2>Id: {{ user.id }}</h2>
+  <p>p0: {{ user.p0 }}</p>
+  <p>p1: {{ user.p1 }}</p>
+  <p>p2: {{ user.p2 }}</p>
+  <p>p3: {{ user.p3 }}</p>
+  <p>p4: {{ user.p4 }}</p>
+  <p>p5: {{ user.p5 }}</p>
+  <p>p6: {{ user.p6 }}</p>
+  <p>p7: {{ user.p7 }}</p>
+  <p>p8: {{ user.p8 }}</p>
+  <p>p9: {{ user.p9 }}</p>
+</div>
+
+<div [hidden]="loading === true || error === false">
+  Couldn't find user with such username!
+</div>

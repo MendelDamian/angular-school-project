@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { DatabaseService } from '../database.service';
 
 @Component({
@@ -22,32 +23,17 @@ export class UserComponent implements OnInit {
     p9: ''
   };
 
-  constructor(private database: DatabaseService) { }
+  constructor(
+    private database: DatabaseService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.getUser();
   }
 
   getUser(): void {
-    this.database.getUser(this.username).subscribe(t_user => {
-      if (t_user.length) {
-        this.user = t_user[0];
-      } else {
-        this.user = {
-          id: 0,
-          p0: '',
-          p1: '',
-          p2: '',
-          p3: '',
-          p4: '',
-          p5: '',
-          p6: '',
-          p7: '',
-          p8: '',
-          p9: ''
-        };
-      }
-    })
+    this.router.navigate(['/user/' + this.username ]);
   }
 
   getValue(event: Event): string {
