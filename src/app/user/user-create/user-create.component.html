@@ -3,6 +3,6 @@
   <button (click)="createUser()" >Utwórz uzytkownika</button>
 </div>
 
-<div [hidden]="exists === true">
+<div *ngIf="error == true">
   Uzytkownik już istnieje.
 </div>

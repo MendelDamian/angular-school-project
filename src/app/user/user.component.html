@@ -1,8 +1,4 @@
 <div>
   <input (input)="username = getValue($event)">
   <button (click)="getUser()" >Szukaj</button>
-
-  <div [hidden]="user.id == 0">
-    <p>dane: {{user.p0}} dla użytkownika: {{username}} ID: {{user.id}}</p>
-  </div>
 </div>

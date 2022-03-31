@@ -12,15 +12,15 @@ export class DatabaseService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(username: string): Observable<User[]> {
+  getUser(username: string): Observable<User> {
     if (username) {
-      return this.http.get<User[]>( this.host + "player/" + username);
+      return this.http.get<User>( this.host + "player/" + username);
     } else {
-      return new Observable<User[]>();
+      return new Observable<User>();
     }
   }
 
-  createUser(userCreate_t: UserCreate): Observable<UserCreateResponse[]> {
-    return this.http.put<UserCreateResponse[]>(this.host + "players", userCreate_t);
+  createUser(userCreate_t: UserCreate): Observable<UserCreateResponse> {
+    return this.http.put<UserCreateResponse>(this.host + "players", userCreate_t);
   }
 }

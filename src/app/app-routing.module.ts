@@ -6,9 +6,10 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 const routes: Routes = [
-  { path: '', component: UserComponent },
+  { path: 'user', component: UserComponent },
   { path: 'create', component: UserCreateComponent },
-  { path: 'user/:username', component: UserDetailComponent,  }
+  { path: 'user/:username', component: UserDetailComponent,  },
+  { path: '**', redirectTo: "user" }
 ];
 
 @NgModule({

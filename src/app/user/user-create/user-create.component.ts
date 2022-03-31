@@ -8,7 +8,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./user-create.component.css']
 })
 export class UserCreateComponent implements OnInit {
-  exists: boolean = true
+  error: boolean = false
   userCreate: UserCreate = {
     name: ''
   }
@@ -32,19 +32,20 @@ export class UserCreateComponent implements OnInit {
 
   createUser(): void {
     this.database.createUser(this.userCreate).subscribe(result => {
-      this.exists = false;
-      if (result.length > 0)
+      this.error = false;
+      if (result)
       {
-        this.userCreateResponse = result[0];
+        this.userCreateResponse = result;
         if (this.userCreateResponse.id != 0)
         {
           this.router.navigate(['/user/' + this.userCreate.name ]);
         } else {
-          this.exists = true;
+          this.error = true;
         }
+      } else {
+        this.error = true;
       }
     });
-
   }
 
 }

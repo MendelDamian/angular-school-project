@@ -42,12 +42,11 @@ export class UserDetailComponent implements OnInit {
 
   getUser(): void {
     this.loading = true;
+    this.error = false;
     this.database.getUser(this.username).subscribe(t_user => {
       this.loading = false;
-      if (t_user.length > 0)
-      {
-        this.error = false;
-        this.user = t_user[0];
+      if (t_user) {
+        this.user = t_user;
       } else {
         this.error = true;
       }

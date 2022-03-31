@@ -8,20 +8,7 @@ import { DatabaseService } from '../database.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  username = '';
-  user: User = {
-    id: 0,
-    p0: '',
-    p1: '',
-    p2: '',
-    p3: '',
-    p4: '',
-    p5: '',
-    p6: '',
-    p7: '',
-    p8: '',
-    p9: ''
-  };
+  username = ''
 
   constructor(
     private database: DatabaseService,
