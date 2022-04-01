@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { User } from './user/user.component';
 import { UserCreate, UserCreateResponse } from './user/user-create/user-create.component';
 import { UserListResponse } from './user/user-list/user-list.component';
+import { UserUpdate, UserUpdateResponse } from './user/user-detail/user-detail.component';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,9 @@ export class DatabaseService {
 
   createUser(userCreate_t: UserCreate): Observable<UserCreateResponse> {
     return this.http.put<UserCreateResponse>(this.host + "players", userCreate_t);
+  }
+
+  updateUser(id: number, userUpdate: UserUpdate): Observable<UserUpdateResponse> {
+    return this.http.put<UserUpdateResponse>(this.host + "players/" + id, userUpdate);
   }
 }
