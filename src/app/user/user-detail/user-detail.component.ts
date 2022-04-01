@@ -77,7 +77,9 @@ export class UserDetailComponent implements OnInit {
   }
 
   getUserByp0(): void {
-    this.router.navigate([ '/users/' + this.user.p0 ]);
+    if (this.user.p0) {
+      this.router.navigate([ '/users/' + this.user.p0 ]);
+    }
   }
 
 }
