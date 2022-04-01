@@ -1,8 +1,19 @@
-<div>
-  <input [(ngModel)]="userCreate.name" type="text">
-  <button (click)="createUser()" >Utwórz uzytkownika</button>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="usernameInput" class="col-form-label">Nazwa użytkownika</label>
+  </div>
+  <div class="col-auto">
+    <input
+      [(ngModel)]="userCreate.name"
+      type="text"
+      id="usernameInput"
+      class="form-control">
+  </div>
+  <div class="col-auto">
+    <button (click)="createUser()" class="btn btn-primary">Utwórz</button>
+  </div>
 </div>
 
-<div *ngIf="error == true">
-  Uzytkownik już istnieje.
+<div *ngIf="error == true" class="alert-info p-3 mt-5">
+  Użytkownik już istnieje.
 </div>

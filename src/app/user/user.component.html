@@ -1,4 +1,32 @@
-<div>
-  <input (input)="username = getValue($event)">
-  <button (click)="getUser()" >Szukaj</button>
+<div class="row g-3 align-items-center">
+  <div class="col-2">
+    <label for="usernameInput" class="col-form-label">Nazwa użytkownika</label>
+  </div>
+  <div class="col-auto">
+    <input
+      [(ngModel)]="username"
+      type="text"
+      id="usernameInput"
+      class="form-control">
+  </div>
+  <div class="col-auto">
+    <button (click)="getUserByUsername()" class="btn btn-primary">Szukaj</button>
+  </div>
 </div>
+
+<div class="row g-3 align-items-center mt-2">
+  <div class="col-2">
+    <label for="p0Input" class="col-form-label">Pole p0</label>
+  </div>
+  <div class="col-auto">
+    <input
+      [(ngModel)]="p0"
+      type="text"
+      id="p0Input"
+      class="form-control">
+  </div>
+  <div class="col-auto">
+    <button (click)="getUserByp0()" class="btn btn-primary">Szukaj</button>
+  </div>
+</div>
+

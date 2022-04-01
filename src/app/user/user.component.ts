@@ -8,7 +8,8 @@ import { DatabaseService } from '../database.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  username = ''
+  username: string = ''
+  p0: string = ''
 
   constructor(
     private database: DatabaseService,
@@ -19,12 +20,12 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getUser(): void {
-    this.router.navigate(['/user/' + this.username ]);
+  getUserByUsername(): void {
+    this.router.navigate([ '/user/' + this.username ]);
   }
 
-  getValue(event: Event): string {
-    return (event.target as HTMLInputElement).value;
+  getUserByp0(): void {
+    this.router.navigate([ '/users/' + this.p0 ]);
   }
 
 }

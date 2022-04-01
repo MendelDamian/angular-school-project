@@ -26,10 +26,6 @@ export class UserCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getValue(event: Event): string {
-    return (event.target as HTMLInputElement).value;
-  }
-
   createUser(): void {
     this.database.createUser(this.userCreate).subscribe(result => {
       this.error = false;
