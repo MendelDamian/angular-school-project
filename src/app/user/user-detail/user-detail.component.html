@@ -29,6 +29,9 @@
     <div class="col-auto">
       <input [(ngModel)]="user.p0" type="text" id="p0Input" class="form-control">
     </div>
+    <div class="col-auto">
+      <button (click)="getUserByp0()" class="btn btn-outline-primary">Szukaj użytkowników z tym samym p0</button>
+    </div>
   </div>
   <div class="row g-2 align-items-center mb-1">
     <div class="col-2">
@@ -104,7 +107,7 @@
   </div>
   <div class="row t-1 mt-4">
     <div class="col-auto">
-      <button (click)="updateUser()" class="btn btn-primary">Zapisz zmiany</button>
+      <button (click)="updateUser()" class="btn btn-success">Zapisz zmiany</button>
     </div>
   </div>
 </div>

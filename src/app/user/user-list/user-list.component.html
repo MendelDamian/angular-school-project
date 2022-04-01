@@ -13,15 +13,21 @@
           <th class="col-1">Lp.</th>
           <th class="col-2">Id</th>
           <th class="col-2">Username</th>
-          <th class="col-8">p1</th>
+          <th class="col-7">p1</th>
+          <th class="col-1"></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of userListResponse; let i = index">
+        <tr *ngFor="let user of userListResponse; let i = index" class="align-text-bottom">
           <td>{{ i }}</td>
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.p1 }}</td>
+          <td>
+            <button (click)="goToUser(user.name)" class="btn btn-primary">
+              Profil
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

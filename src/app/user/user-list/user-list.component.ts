@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../database.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -15,7 +15,8 @@ export class UserListComponent implements OnInit {
 
   constructor(
     private database: DatabaseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.loading = true;
     this.route.params.subscribe(params => {
@@ -38,6 +39,10 @@ export class UserListComponent implements OnInit {
         this.error = true;
       }
     })
+  }
+
+  goToUser(username: string): void {
+    this.router.navigate([ '/user/' + username ]);
   }
 
 }

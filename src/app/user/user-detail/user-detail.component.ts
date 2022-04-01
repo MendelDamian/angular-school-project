@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.component';
 import { DatabaseService } from '../../database.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
@@ -28,7 +28,8 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private database: DatabaseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.loading = true;
     this.route.params.subscribe(params => {
@@ -73,6 +74,10 @@ export class UserDetailComponent implements OnInit {
       this.loading = false;
       this.error = response.err != 0;
     })
+  }
+
+  getUserByp0(): void {
+    this.router.navigate([ '/users/' + this.user.p0 ]);
   }
 
 }
