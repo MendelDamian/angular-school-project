@@ -1,17 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" routerLink="/user">Angular project</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/user" routerLinkActive="active">Wyszukaj użytkownika</a>
-        <a class="nav-item nav-link" routerLink="/create" routerLinkActive="active">Dodaj użytkownika</a>
-      </div>
+
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/user" routerLinkActive="active">Wyszukaj użytkownika</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/create" routerLinkActive="active">Dodaj użytkownika</a>
+        </li>
+        <li class="nav-item dropdown">
+          <ul class="dropdown-menu" aria-labelledby="dropdown03">
+            <li><a class="dropdown-item" routerLink="/user" routerLinkActive="active">Wyszukaj użytkownika</a></li>
+            <li><a class="dropdown-item" routerLink="/create" routerLinkActive="active">Dodaj użytkownika</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
+
 <div class="container">
   <div class="content pt-5">
     <router-outlet></router-outlet>

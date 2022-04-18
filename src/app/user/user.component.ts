@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatabaseService } from '../database.service';
 
@@ -7,7 +7,7 @@ import { DatabaseService } from '../database.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
   username: string = ''
   p0: string = ''
 
@@ -16,9 +16,6 @@ export class UserComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) { }
-
-  ngOnInit(): void {
-  }
 
   getUserByUsername(): void {
     this.router.navigate([ '/user/' + this.username ]);

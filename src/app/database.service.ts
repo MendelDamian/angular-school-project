@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
-import { User } from './user/user.component';
-import { UserCreate, UserCreateResponse } from './user/user-create/user-create.component';
-import { UserListResponse } from './user/user-list/user-list.component';
+import {Injectable } from '@angular/core';
+import {HttpClient } from '@angular/common/http';
+import {Observable } from 'rxjs/internal/Observable';
+import {User } from './user/user.component';
+import {UserCreate, UserCreateResponse } from './user/user-create/user-create.component';
+import {UserListResponse } from './user/user-list/user-list.component';
 import { UserUpdate, UserUpdateResponse } from './user/user-detail/user-detail.component';
 
 @Injectable({
