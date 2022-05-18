@@ -1,9 +1,9 @@
-import {Injectable } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
-import {Observable } from 'rxjs/internal/Observable';
-import {User } from './user/user.component';
-import {UserCreate, UserCreateResponse } from './user/user-create/user-create.component';
-import {UserListResponse } from './user/user-list/user-list.component';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+import { User } from './user/user.component';
+import { UserCreate, UserCreateResponse } from './user/user-create/user-create.component';
+import { UserListResponse } from './user/user-list/user-list.component';
 import { UserUpdate, UserUpdateResponse } from './user/user-detail/user-detail.component';
 
 @Injectable({
@@ -12,11 +12,12 @@ import { UserUpdate, UserUpdateResponse } from './user/user-detail/user-detail.c
 export class DatabaseService {
   host = 'https://imsi.pl:5000/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getUserByUsername(username: string): Observable<User[]> {
     if (username) {
-      return this.http.get<User[]>( this.host + "player/" + username);
+      return this.http.get<User[]>(this.host + 'player/' + username);
     } else {
       return new Observable<User[]>();
     }
@@ -24,17 +25,17 @@ export class DatabaseService {
 
   getUsersByp0(p0: string): Observable<UserListResponse[]> {
     if (p0) {
-      return this.http.get<UserListResponse[]>( this.host + "players/" + p0);
+      return this.http.get<UserListResponse[]>(this.host + 'players/' + p0);
     } else {
       return new Observable<UserListResponse[]>();
     }
   }
 
   createUser(userCreate_t: UserCreate): Observable<UserCreateResponse> {
-    return this.http.put<UserCreateResponse>(this.host + "players", userCreate_t);
+    return this.http.put<UserCreateResponse>(this.host + 'players', userCreate_t);
   }
 
   updateUser(id: number, userUpdate: UserUpdate): Observable<UserUpdateResponse> {
-    return this.http.put<UserUpdateResponse>(this.host + "players/" + id, userUpdate);
+    return this.http.put<UserUpdateResponse>(this.host + 'players/' + id, userUpdate);
   }
 }

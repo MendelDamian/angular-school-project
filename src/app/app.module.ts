@@ -25,6 +25,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+}

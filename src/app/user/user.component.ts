@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: [ './user.component.css' ]
 })
 export class UserComponent {
-  username: string = ''
-  p0: string = ''
+  username: string = '';
+  p0: string = '';
 
   constructor(
     private database: DatabaseService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+  }
 
   getUserByUsername(): void {
     this.router.navigate([ '/user/' + this.username ]);

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.component';
 import { DatabaseService } from '../../database.service';
-import {ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
+  styleUrls: [ './user-detail.component.css' ]
 })
 export class UserDetailComponent implements OnInit {
-  username: string = ''
+  username: string = '';
   user: User = {
     id: 0,
     p0: '',
@@ -23,8 +23,8 @@ export class UserDetailComponent implements OnInit {
     p8: '',
     p9: ''
   };
-  loading: boolean = true
-  error: boolean = false
+  loading: boolean = true;
+  error: boolean = false;
 
   constructor(
     private database: DatabaseService,
@@ -33,7 +33,7 @@ export class UserDetailComponent implements OnInit {
   ) {
     this.loading = true;
     this.route.params.subscribe(params => {
-      this.username = params["username"];
+      this.username = params['username'];
     });
   }
 
@@ -51,7 +51,7 @@ export class UserDetailComponent implements OnInit {
       } else {
         this.error = true;
       }
-    })
+    });
   }
 
   updateUser(): void {
@@ -68,12 +68,12 @@ export class UserDetailComponent implements OnInit {
       p7: this.user.p7,
       p8: this.user.p8,
       p9: this.user.p9
-    }
+    };
 
     this.database.updateUser(this.user.id, userUpdate).subscribe(response => {
       this.loading = false;
       this.error = response.err != 0;
-    })
+    });
   }
 
   getUserByp0(): void {
@@ -98,5 +98,5 @@ export interface UserUpdate {
 }
 
 export interface UserUpdateResponse {
-  err: number
+  err: number;
 }

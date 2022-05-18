@@ -10,7 +10,7 @@ describe('UserCreateComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ UserCreateComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

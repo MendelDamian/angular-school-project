@@ -1,107 +1,107 @@
-<div *ngIf="loading" >
-  LOADING...
+<div *ngIf="loading">
+    LOADING...
 </div>
 
 <div *ngIf="!loading && !error">
-  <div class="row g-2 align-items-center mb-3">
-    <div class="col-auto">
-      Dane użytkownika <b>{{ username }}</b> o id <b>{{ user.id }}</b>
+    <div class="row g-2 align-items-center mb-3">
+        <div class="col-auto">
+            Dane użytkownika <b>{{ username }}</b> o id <b>{{ user.id }}</b>
+        </div>
     </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p0Input" class="col-form-label">p0</label>
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p0Input">p0</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p0" class="form-control" id="p0Input" type="text">
+        </div>
+        <div class="col-auto">
+            <button (click)="getUserByp0()" class="btn btn-outline-primary">Szukaj użytkowników z tym samym p0</button>
+        </div>
     </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p0" type="text" id="p0Input" class="form-control">
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p1Input">p1</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p1" class="form-control" id="p1Input" type="text">
+        </div>
     </div>
-    <div class="col-auto">
-      <button (click)="getUserByp0()" class="btn btn-outline-primary">Szukaj użytkowników z tym samym p0</button>
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p2Input">p2</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p2" class="form-control" id="p2Input" type="text">
+        </div>
     </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p1Input" class="col-form-label">p1</label>
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p3Input">p3</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p3" class="form-control" id="p3Input" type="text">
+        </div>
     </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p1" type="text" id="p1Input" class="form-control">
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p4Input">p4</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p4" class="form-control" id="p4Input" type="text">
+        </div>
     </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p2Input" class="col-form-label">p2</label>
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p5Input">p5</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p5" class="form-control" id="p5Input" type="text">
+        </div>
     </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p2" type="text" id="p2Input" class="form-control">
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p6Input">p6</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p6" class="form-control" id="p6Input" type="text">
+        </div>
     </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p3Input" class="col-form-label">p3</label>
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p7Input">p7</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p7" class="form-control" id="p7Input" type="text">
+        </div>
     </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p3" type="text" id="p3Input" class="form-control">
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p8Input">p8</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p8" class="form-control" id="p8Input" type="text">
+        </div>
     </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p4Input" class="col-form-label">p4</label>
+    <div class="row g-2 align-items-center mb-1">
+        <div class="col-2">
+            <label class="col-form-label" for="p9Input">p9</label>
+        </div>
+        <div class="col-auto">
+            <input [(ngModel)]="user.p9" class="form-control" id="p9Input" type="text">
+        </div>
     </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p4" type="text" id="p4Input" class="form-control">
+    <div class="row t-1 mt-4">
+        <div class="col-auto">
+            <button (click)="updateUser()" class="btn btn-success">Zapisz zmiany</button>
+        </div>
     </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p5Input" class="col-form-label">p5</label>
-    </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p5" type="text" id="p5Input" class="form-control">
-    </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p6Input" class="col-form-label">p6</label>
-    </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p6" type="text" id="p6Input" class="form-control">
-    </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p7Input" class="col-form-label">p7</label>
-    </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p7" type="text" id="p7Input" class="form-control">
-    </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p8Input" class="col-form-label">p8</label>
-    </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p8" type="text" id="p8Input" class="form-control">
-    </div>
-  </div>
-  <div class="row g-2 align-items-center mb-1">
-    <div class="col-2">
-      <label for="p9Input" class="col-form-label">p9</label>
-    </div>
-    <div class="col-auto">
-      <input [(ngModel)]="user.p9" type="text" id="p9Input" class="form-control">
-    </div>
-  </div>
-  <div class="row t-1 mt-4">
-    <div class="col-auto">
-      <button (click)="updateUser()" class="btn btn-success">Zapisz zmiany</button>
-    </div>
-  </div>
 </div>
 
 <div *ngIf="!loading && error">
-  <div class="row">
-    <div class="col col-auto alert-danger p-3 m-auto">
-      Nie znaleziono użytkownika
+    <div class="row">
+        <div class="col col-auto alert-danger p-3 m-auto">
+            Nie znaleziono użytkownika
+        </div>
     </div>
-  </div>
 </div>
